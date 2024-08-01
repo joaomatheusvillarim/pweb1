@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Questão 4</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <script>
+      function partirData() {
+        var data = document.getElementById("idData").value;
+        data = data.split("/");
+        alert("O dia é " + data[0] + ", o mês é " + data[1] + " e o ano é " + data[2]);
+      }
+    </script>
+  </head>
+  <body>
+    <h2>Questão 4 - Roteiro 3</h2>
+    <p>Desenvolva uma página HTML capaz de quebrar um data de um dado campo de entrada em dia, mês e ano, a partir do click de um botão.</p>
+    <h3>Data:</h3>
+    <input type="text" id="idData"/>
+    <input type="button" value="Partir data" onclick="partirData()"/>
+  </body>
+</html>

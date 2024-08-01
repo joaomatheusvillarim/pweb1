@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Questão 7</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <script>
+      function somarMultiplosTres() {
+        var array = document.getElementById("idNumeros").value;
+        array = array.split(",");
+        var soma = 0;
+        for (i = 0; i < array.length; i++) {
+          soma += getValor(parseInt(array[i]));
+        }
+        alert("A soma dos múltiplos de 3 é " + soma);
+      }
+
+      function getValor(num) {
+        var resp = 0;
+        if (num % 3 == 0) {
+          resp = num;
+        }
+        return resp;
+      }
+    </script>
+  </head>
+  <body>
+    <h2>Questão 7 - Roteiro 3</h2>
+    <p>Desenvolva uma página HTML capaz de efetuar a soma de todos os números ímpares que são múltiplos de
+      três e que se encontram dentro dos números inteiros (separados por vírgula) de um dado campo de entrada, a
+      partir do click de um botão.</p>
+    <h3>Números:</h3>
+    <input type="text" id="idNumeros"/>
+    <input type="button" value="Calcular soma" onclick="somarMultiplosTres()"/>
+  </body>
+</html>

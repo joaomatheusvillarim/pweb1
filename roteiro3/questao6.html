@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>Questão 6</title>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <script>
+    function ordenarLista() {
+      var array = document.getElementById("idNumeros").value;
+      array = array.split(",");
+      for (i = 0; i < array.length; i++) {
+        indexMenor = i;
+        for (j = i + 1; j < array.length; j++) {
+          if (parseInt(array[indexMenor]) > parseInt(array[j])) {
+            indexMenor = j;
+          }
+        }
+        swap(array, i, indexMenor);
+      }
+      alert("A lista ordenada é " + array);
+    }
+
+    function swap(array, i, j) {
+      aux = array[i];
+      array[i] = array[j];
+      array[j] = aux;
+    }
+  </script>
+ </head>
+ <body>
+  <h2>Questão 6 - Roteiro 3</h2>
+  <p>Desenvolva uma página HTML capaz de ordenar uma lista de inteiros (separados por vírgula) de um dado campo de entrada, a partir do click de um botão.</p>
+  <h3>Números:</h3>
+  <input type="text" id="idNumeros"/>
+  <input type="button" value="Ordenar lista" onclick="ordenarLista()"/>
+ </body>
+</html>

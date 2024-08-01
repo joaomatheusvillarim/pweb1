@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Questão 9</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <script>
+      function calcularEstatisticas() {
+        var array = document.getElementById("idNumeros").value;
+        var soma = 0, positivos = 0, negativos = 0;
+        var tamanho = array.length;
+        for (i = 0; i < tamanho; i++) {
+          numero = parseInt(array[i]);
+          soma += numero;
+          if (numero > 0) {
+            positivos++;
+          } else if (numero < 0) {
+            negativos++;
+          }
+        }
+        document.write("Média: " + (soma / tamanho) + "<br/>"
+          + "Positivos: " + positivos + "(" + (positivos/tamanho) * 100 + "%) <br/>"
+          + "Negativos: " + negativos + "(" + (negativos/tamanho) * 100 + "%) <br/>"); 
+      }
+    </script>
+  </head>
+  <body>
+    <h2>Questão 9 - Roteiro 3</h2>
+    <p>Desenvolva uma página HTML capaz de escrever a média aritmética dos valores lidos, a quantidade de
+      valores positivos, a quantidade de valores negativos e o percentual de valores negativos e positivos na lista de
+      inteiros (separados por vírgula) de um dado campo de entrada, a partir do click de um botão.</p>
+    <h3>Valores:</h3>
+    <input type="text" id="idNumeros"/>
+    <input type="button" value="Calcular estatísticas" onclick="calcularEstatisticas()"/>
+  </body>
+</html>
