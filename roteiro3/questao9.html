@@ -6,11 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <script>
       function calcularEstatisticas() {
-        var array = document.getElementById("idNumeros").value;
-        var soma = 0, positivos = 0, negativos = 0;
-        var tamanho = array.length;
+        var array = document.getElementById("idNumeros").value.split(",");
+        var soma = 0, positivos = 0, negativos = 0, tamanho = array.length;
         for (i = 0; i < tamanho; i++) {
-          numero = parseInt(array[i]);
+          let numero = parseInt(array[i]);
           soma += numero;
           if (numero > 0) {
             positivos++;
@@ -18,10 +17,11 @@
             negativos++;
           }
         }
-        document.write("Média: " + (soma / tamanho) + "<br/>"
-          + "Positivos: " + positivos + "(" + (positivos/tamanho) * 100 + "%) <br/>"
-          + "Negativos: " + negativos + "(" + (negativos/tamanho) * 100 + "%) <br/>"); 
-      }
+        let media = soma / tamanho;
+        let porcentagemP = (positivos / tamanho) * 100;
+        let porcentagemN = (negativos / tamanho) * 100;
+      alert(`Média: ${media}\nPositivos: ${positivos} (${porcentagemP}%)\nNegativos: ${negativos} (${porcentagemN}%)`);
+    }
     </script>
   </head>
   <body>

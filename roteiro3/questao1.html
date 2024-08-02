@@ -6,22 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <script>
       function calcularQuadrados() {
-        var linha = document.getElementById('idNumeros').value;
-        linha = linha.split(",");
-        for (i = 0; i < linha.length; i++) {
-          numero = parseInt(linha[i]);
-          document.write("O quadrado de " + numero + " é " + (numero*numero) + "<br/>");
+        let array = document.getElementById('idNumeros').value.split(",");
+        let message = "";
+        for (i = 0; i < array.length; i++) {
+          let numero = parseInt(array[i]);
+          message += `O quadrado de ${numero} é ${numero*numero}\n`;
         }
+        alert(message);
       }
     </script>
   </head>
   <body>
     <h2>Questão 1 - Roteiro 3</h2>
-    <p>Desenvolva uma página HTML capaz de calcular o quadrado de todos os números (separados por vírgula)
-      de um dado campo de entrada, a partir do click de um botão.</p>
+    <p>Desenvolva uma página HTML capaz de calcular o quadrado de todos os números
+       (separados por vírgula) de um dado campo de entrada, a partir do click de um
+       botão.</p>
     <h3>Números:</h3>
     <input type="text" id="idNumeros"/>
     <input type="button" value="Calcular quadrados" onclick="calcularQuadrados()"/>
-    
   </body>
 </html>

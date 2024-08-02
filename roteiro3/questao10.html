@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Questão 10</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <script>
+      function inverterValores() {
+        var array = document.getElementById("idValores").value.split(",");
+        let resp = [];
+        let tamanho = array.length;
+        for (i = 0; i < tamanho; i++) {
+          resp[i] = parseInt(array[tamanho - i - 1]);
+        }
+        alert("A lista invertida é: " + resp);
+      }
+    </script>
+  </head>
+  <body>
+    <h2>Questão 10 - Roteiro 3</h2>
+    <p>Desenvolva uma página HTML capaz de inverter os valores (ex:[1, 5, 7, 2] fica [2, 7, 5, 1]) na lista de
+      inteiros (separados por vírgula) de um dado campo de entrada, a partir do click de um botão.</p>
+    <h3>Valores: </h3>
+    <input type="text" id="idValores"/>
+    <input type="button" value="Inverter valores" onclick="inverterValores()"/>
+  </body>
+</html>

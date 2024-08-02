@@ -6,24 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <script>
       function encontrarMaior() {
-        var linha = document.getElementById("idNumeros").value;
-        linha = linha.split(",");
-        var maior = parseInt(linha[0]);
-        for (i = 1; i < linha.length; i++) {
-          numero = parseInt(linha[i]);
+        let array = document.getElementById("idNumeros").value.split(",");
+        let maior = parseInt(array[0]);
+        for (i = 1; i < array.length; i++) {
+          let numero = parseInt(array[i]);
           if (numero > maior) {
             maior = numero;
           }
         }
-        alert("O maior valor é " + maior);
+        alert(`O maior valor é ${maior}`);
       }
-
     </script>
   </head>
   <body>
     <h2>Questão 2 - Roteiro 3</h2>
-    <p>Desenvolva uma página HTML capaz de achar o maior valor de uma lista de inteiros (separados por
-      vírgula) de um dado campo de entrada, a partir do click de um botão.</p>
+    <p>Desenvolva uma página HTML capaz de achar o maior valor de uma lista de
+      inteiros (separados por vírgula) de um dado campo de entrada, a partir do
+      click de um botão.</p>
     <h3>Números:</h3>
     <input type="text" id="idNumeros"/>
     <input type="button" value="Encontrar maior" onclick="encontrarMaior()"/>

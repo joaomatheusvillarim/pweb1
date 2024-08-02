@@ -6,23 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <script>
       function filtrarMenores() {
-        var linha = document.getElementById("idIdades").value;
-        linha = linha.split(",");
-        var menores = 0;
-        for (i = 0; i < linha.length; i++) {
-          idade = parseInt(linha[i]);
+        let array = document.getElementById("idIdades").value.split(",");
+        let menores = 0;
+        for (i = 0; i < array.length; i++) {
+          let idade = parseInt(array[i]);
           if (idade < 18) {
             menores++;
           }
         }
-        alert("A quantidade de menores de idade é " + menores);
+        alert(`A quantidade de menores de idade é ${menores}`);
       }
-
     </script>
   </head>
   <body>
     <h2>Questão 3 - Roteiro 3</h2>
-    <p>Desenvolva uma página HTML capaz de achar o número de pessoas maiores e menores de 18 anos de uma lista de inteiros (separados por vírgula) de um dado campo de entrada, a partir do click de um botão.</p>
+    <p>Desenvolva uma página HTML capaz de achar o número de pessoas maiores e
+      menores de 18 anos de uma lista de inteiros (separados por vírgula) de um
+      dado campo de entrada, a partir do click de um botão.</p>
     <h3>Idades:</h3>
     <input type="text" id="idIdades"/>
     <input type="button" value="Encontrar quantidade" onclick="filtrarMenores()"/>
