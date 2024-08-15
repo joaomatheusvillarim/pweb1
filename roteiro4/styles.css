@@ -1,0 +1,38 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 1rem;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #9754CB;
+  color: #28104E;
+}
+
+header {
+  margin: 1rem;
+  padding: 1rem;
+  background-color: #DEACF5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav {
+  padding: 10px;
+}
+
+div {
+  margin: 1rem;
+  padding: 1rem;
+  background-color: #DEACF5;
+}
+
+a {
+  text-decoration: none;
+  color: #28104E;
+  margin: 5px;
+}
+
+input {
+  border-radius: 10px;
+
+}
