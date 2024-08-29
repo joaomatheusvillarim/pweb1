@@ -127,7 +127,9 @@ function validarFormulario() {
   const senha = document.getElementById('senha').value;
   const erro = document.getElementById('mensagem-erro');
 
-  const validarCpf = cpf => cpf 
+  const validarCpf = cpf => {
+    
+  }
 
   if (isEmpty(nome))
     
@@ -143,10 +145,12 @@ function validarFormulario() {
 let contador = 0;
 function incrementar() {
   contador++;
+  document.getElementById("contador").innerHTML = contador;
 }
 
 function decrementar() {
   contador--;
+  document.getElementById("contador").innerHTML = contador;
 }
 
 function geraMusicaElefante(numVersos){
