@@ -103,6 +103,14 @@ function mover(direcao) {
 function alternarClasse() {
   const p = document.getElementById('classeParagrafo');
   //TODO
+
+  const texto = p.innerHTML;
+  if (texto.endsWith("azul.")) {
+    p.innerHTML = texto.replace("azul", "vermelha");
+  } else if (texto.endsWith("vermelha.")) {
+    p.innerHTML = texto.replace("vermelha", "azul");
+  }
+
   p.classList.toggle('classeAzul');
   p.classList.toggle('classeVermelha');
 }
@@ -120,21 +128,26 @@ function mostrarImagemMaior(img) {
 //Pelo menos: não aceitar nome vazio, o cpf precisa estar mascarado e com 14 dígitos, 
 //o email precisa ter pelo menos um @ e um ponto duas posições após o @ e a senha não deve conter menos que 8 caracteres.
 function validarFormulario() {
-  let resp = true;
   const nome = document.getElementById('nome').value;
   const cpf = document.getElementById('cpf').value;
   const email = document.getElementById('email').value;
   const senha = document.getElementById('senha').value;
   const erro = document.getElementById('mensagem-erro');
 
-  const validarCpf = cpf => {
-    
-  }
+  const cpfRegex = "^\d{3}\.\d{3}\.\d{3}-\d{2}$";
+  const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
-  if (isEmpty(nome))
-    
-  erro.textContent = '';
-  return resp;
+  const validarNome = nome => !isEmpty(nome);
+  const validarCpf = cpf => cpfRegex.test(cpf);
+  const validarEmail = email => emailRegex.test(email);
+  const validarSenha = senha => senha.length >= 8;
+
+  if (!validarNome(nome) || !validarCpf(cpf) || !validarEmail(email) || !validarSenha(senha)) {
+    erro.textContent = 'Dados inválidos!';
+  } else {
+    erro.textContent = '';
+  }
+  event.preventDefault();
 }
 
 // Exercício 9: Contador Incremental
@@ -153,8 +166,7 @@ function decrementar() {
   document.getElementById("contador").innerHTML = contador;
 }
 
-function geraMusicaElefante(numVersos){
-
+function geraMusicaElefante(numVersos){ 
 }
 
 // Exercício 10: Filtrar Itens de uma Lista com callback e arrow function
